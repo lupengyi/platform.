@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -11,8 +11,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../../src/Platform.Libraries/Platform.Libraries.csproj" />
-    <ProjectReference Include="../../src/Platform.Automation/Platform.Automation.csproj" />
-    <ProjectReference Include="../../src/Platform.Core/Platform.Core.csproj" />
+    <ProjectReference Include="../../src/IndustrialTestPlatform.Core/IndustrialTestPlatform.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,13 @@
+{
+  "RunName": "DemoRun",
+  "ReportsRoot": "Run",
+  "LimitsFile": "limits.csv",
+  "Slots": [
+    { "SlotId": 1, "Name": "Slot A" },
+    { "SlotId": 2, "Name": "Slot B" }
+  ],
+  "Retry": {
+    "MaxAttempts": 3,
+    "DelayMs": 150
+  }
+}

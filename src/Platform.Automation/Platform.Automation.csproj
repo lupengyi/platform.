@@ -7,6 +7,5 @@
   <ItemGroup>
     <ProjectReference Include="../Platform.Contracts/Platform.Contracts.csproj" />
     <ProjectReference Include="../Platform.Core/Platform.Core.csproj" />
-    <ProjectReference Include="../Platform.Libraries/Platform.Libraries.csproj" />
   </ItemGroup>
 </Project>
