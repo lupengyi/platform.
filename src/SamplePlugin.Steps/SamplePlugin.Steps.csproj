@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RepoRoot>$(MSBuildProjectDirectory)/../..</RepoRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Platform.Contracts/Platform.Contracts.csproj" />
+  </ItemGroup>
+
+  <Target Name="CopyPluginToRoot" AfterTargets="Build">
+    <PropertyGroup>
+      <PluginDir>$(RepoRoot)/plugins</PluginDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(PluginDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PluginDir)" />
+  </Target>
+</Project>
