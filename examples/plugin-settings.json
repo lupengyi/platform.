@@ -1,0 +1,8 @@
+{
+  "pluginDirectory": "./plugins",
+  "security": {
+    "allowedSha256": [
+      "REPLACE_WITH_PLUGIN_SHA256"
+    ]
+  }
+}

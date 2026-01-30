@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../IndustrialTestPlatform.Contracts/IndustrialTestPlatform.Contracts.csproj" />
+    <ProjectReference Include="../IndustrialTestPlatform.Core/IndustrialTestPlatform.Core.csproj" />
+    <ProjectReference Include="../IndustrialTestPlatform.Instruments/IndustrialTestPlatform.Instruments.csproj" />
+    <ProjectReference Include="../IndustrialTestPlatform.Sequencing/IndustrialTestPlatform.Sequencing.csproj" />
+  </ItemGroup>
+</Project>
