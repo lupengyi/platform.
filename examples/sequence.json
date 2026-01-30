@@ -1,0 +1,16 @@
+{
+  "steps": [
+    {
+      "stepId": "builtin.echo",
+      "parameters": {
+        "message": "Hello from built-in steps"
+      }
+    },
+    {
+      "stepId": "sample.greeting",
+      "parameters": {
+        "name": "Plugin user"
+      }
+    }
+  ]
+}
