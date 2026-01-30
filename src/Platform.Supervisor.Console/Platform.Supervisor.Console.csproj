@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Platform.Tester/Platform.Tester.csproj" />
+    <ProjectReference Include="../Platform.Libraries/Platform.Libraries.csproj" />
+    <ProjectReference Include="../Platform.Core/Platform.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config/appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="config/station.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="config/limits.csv" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

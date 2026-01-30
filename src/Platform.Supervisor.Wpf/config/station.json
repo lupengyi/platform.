@@ -1,0 +1,17 @@
+{
+  "StationName": "DemoStation",
+  "SlotCount": 4,
+  "Columns": 2,
+  "Timeouts": {
+    "Dmm": "00:00:02",
+    "Psu": "00:00:02",
+    "Can": "00:00:02"
+  },
+  "StepPlan": [
+    "Safety",
+    "PowerUp",
+    "CommUp",
+    "Measure",
+    "Evaluate"
+  ]
+}
