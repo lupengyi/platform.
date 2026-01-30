@@ -57,8 +57,17 @@ public sealed class StationController
     {
         var correlationId = Guid.NewGuid();
         var logProgress = new Progress<LogEntry>(entry => _logger.Log(entry));
-        var retryPolicy = new RetryPolicy(new RetryOptions(3, TimeSpan.FromMilliseconds(200), true), _logger, correlationId, slotId);
-        var instruments = new InstrumentManager.InstrumentManager(_config.Timeouts, retryPolicy, _logger, correlationId, slotId, slotId * 11);
+        var policyOptions = new InstrumentPolicyOptions(
+            new RetryOptions(3, TimeSpan.FromMilliseconds(200), true),
+            new CircuitBreakerOptions(3, TimeSpan.FromSeconds(2)));
+        var instruments = new InstrumentManager.InstrumentManager(
+            _config.Timeouts,
+            policyOptions,
+            _logger,
+            correlationId,
+            slotId,
+            slotId * 11,
+            HealthCheckOptions.Disabled);
         var context = new TestContext(runId, correlationId, slotId, $"SN{slotId:0000}", DateTimeOffset.UtcNow, instruments, logProgress, _limits);
 
         var steps = BuildSteps();

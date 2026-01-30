@@ -6,6 +6,13 @@ public interface IInstrument
     Task InitializeAsync(CancellationToken cancellationToken);
 }
 
+public interface IHealthCheck
+{
+    Task<HealthCheckResult> CheckHealthAsync(CancellationToken cancellationToken);
+}
+
+public sealed record HealthCheckResult(bool Healthy, string Details);
+
 public interface IDmm : IInstrument
 {
     Task<double> MeasureVoltageAsync(CancellationToken cancellationToken);
@@ -19,6 +26,7 @@ public interface IPsu : IInstrument
 public interface ICanBus : IInstrument
 {
     Task<string> SendAsync(string payload, CancellationToken cancellationToken);
+    Task ReinitializeAsync(CancellationToken cancellationToken);
 }
 
 public interface ITestContext
