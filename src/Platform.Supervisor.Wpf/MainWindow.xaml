@@ -1,0 +1,67 @@
+<Window x:Class="Platform.Supervisor.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Platform Supervisor" Height="720" Width="1100">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Content="Start" Command="{Binding StartCommand}" />
+            <Button Content="Stop" Command="{Binding StopCommand}" />
+            <TextBlock Text="Run Id:" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding RunId}" VerticalAlignment="Center" />
+            <TextBlock Text="Status:" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Status}" VerticalAlignment="Center" />
+        </StackPanel>
+        <TabControl>
+            <TabItem Header="Dashboard">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ItemsControl ItemsSource="{Binding Slots}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="{Binding Columns}" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Gray" BorderThickness="1" Margin="4" Padding="8" CornerRadius="4">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+                                        <TextBlock Text="{Binding State}" />
+                                        <TextBlock Text="{Binding LastMeasurement}" />
+                                        <TextBlock Text="{Binding LastOutcome}" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding Logs}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Config">
+                <StackPanel Margin="8">
+                    <TextBlock Text="Station Config" FontWeight="Bold" />
+                    <TextBlock Text="{Binding StationName}" />
+                    <TextBlock Text="Slots: {Binding SlotCount}" />
+                    <TextBlock Text="Columns: {Binding Columns}" />
+                    <TextBlock Text="Step Plan:" FontWeight="Bold" />
+                    <ItemsControl ItemsSource="{Binding StepPlan}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

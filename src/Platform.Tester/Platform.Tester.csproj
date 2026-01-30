@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Platform.Contracts/Platform.Contracts.csproj" />
+    <ProjectReference Include="../Platform.Core/Platform.Core.csproj" />
+    <ProjectReference Include="../Platform.Libraries/Platform.Libraries.csproj" />
+    <ProjectReference Include="../Platform.InstrumentManager/Platform.InstrumentManager.csproj" />
+    <ProjectReference Include="../Platform.TestSteps/Platform.TestSteps.csproj" />
+    <ProjectReference Include="../Platform.Automation/Platform.Automation.csproj" />
+  </ItemGroup>
+</Project>
